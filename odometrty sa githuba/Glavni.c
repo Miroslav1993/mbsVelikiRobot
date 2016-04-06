@@ -104,12 +104,14 @@ int main(void)
 		//kombinacija2pink();
 		//kombinacija3pink();
 		//kombinacija4pink();
-		kombinacija5pink();
-		//kombinacija1green();
+		//kombinacija5pink();
+		kombinacija1green();
 		//kombinacija2green();
 		//kombinacija3green();
 		//kombinacija4green();
 		//kombinacija5green();
+
+		//Mladen je kaka.
 		
 
 		//provera asinhronog stop signala za momentalno zaustavljanje robota
