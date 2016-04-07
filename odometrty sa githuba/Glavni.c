@@ -105,11 +105,11 @@ int main(void)
 		//kombinacija3pink();
 		//kombinacija4pink();
 		//kombinacija5pink();
-		kombinacija1green();
+		//kombinacija1green();
 		//kombinacija2green();
 		//kombinacija3green();
 		//kombinacija4green();
-		//kombinacija5green();
+		kombinacija5green();
 
 		//Mladen je kaka.
 		
