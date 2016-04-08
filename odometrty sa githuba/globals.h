@@ -187,7 +187,10 @@ centralni_senzor,
 levi_senzor,
 zadnji_senzor,
 detektovan_protivnik_ispred, 
-detektovan_protivnik_iza;
+detektovan_protivnik_iza,
+detekcija_u_toku, //flag za detekciju
+detekcija_brojac;
+
 
 // brojac za 90s
 extern volatile unsigned long
@@ -195,5 +198,6 @@ brojac90s;
 
 extern volatile unsigned long brojac;
 volatile char flag1;				
+
 			
 #endif /* GLOBALS_H_ */

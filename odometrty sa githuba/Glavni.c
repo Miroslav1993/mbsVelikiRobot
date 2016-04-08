@@ -60,40 +60,10 @@ int main(void)
 	_delay_ms(2000);					//cekanje da se stabilizuje sistem
 	
 	nuliraj_poziciju_robota();
-	
-	////jedan smer
-	//PORT_SetPins(&PORTC,	0b00010000);
-	//PORT_ClearPins(&PORTC,	0b00000100);
-
-	////drugi smer
-	//PORT_SetPins(&PORTC, 0b00000100);
-	//PORT_ClearPins(&PORTC, 0b00000010);
-
-	
-	////pokrece
-	//PORT_SetPins(&PORTC, 0b00010000);
-
-	////zaustavlja
-	//PORT_ClearPins(&PORTC, 0b00010010);
-
 
 	//postavi_koordinatni_sistem ( 0, -98, 0 );
 
-	//while ((PORTB.IN & 0b00001000) == 0)
-	//{
-		//zatvori_hvataljku();
-	//}
-
 	brojac90s = 0;
-
-
-	//zatvori_hvataljku();
-
-
-	//spusti_zvono();
-	//_delay_ms(4000);
-	//podigni_zvono();
-
 
 	while(1){
 		
@@ -109,12 +79,9 @@ int main(void)
 		//kombinacija3green();
 		//kombinacija4green();
 		kombinacija5green();
-		
-		//Mladen je kaka.
-		
 
 		//provera asinhronog stop signala za momentalno zaustavljanje robota
-		CheckInputMotorControl();
+		//CheckInputMotorControl();
 		
 		//Racunanje trenutne pozicije
 		if (Rac_tren_poz_sample_counter >= 3){		//9ms

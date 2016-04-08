@@ -21,7 +21,9 @@ centralni_senzor,
 levi_senzor,
 zadnji_senzor,
 detektovan_protivnik_ispred,
-detektovan_protivnik_iza;
+detektovan_protivnik_iza,
+detekcija_brojac,
+detekcija_u_toku;
 
 #define Napred 2
 #define Nazad 1
@@ -531,8 +533,8 @@ void CheckInputMotorControl(void) // direktno zaustavljanje motora preko OPUSTAN
 	//stop na prekidac
 	//proveravaj prednje senzore kada se robot krece unapred
 		
-		
-	if ( (PORTB.IN & 0b00000001) == 0 || (PORTB.IN & 0b00000100) == 0 || (PORTB.IN & 0b00000010) == 0  && smer_zadati == 2)
+
+	if (( (PORTB.IN & 0b00000001) == 0 || (PORTB.IN & 0b00000100) == 0 || (PORTB.IN & 0b00000010) == 0 )  && smer_zadati == 2)
 	{
 		detektovan_protivnik_ispred = 1;	
 				set_direct_out = 1;
@@ -542,6 +544,9 @@ void CheckInputMotorControl(void) // direktno zaustavljanje motora preko OPUSTAN
 	else if ( (PORTB.IN & 0b00001000) == 0 && smer_zadati == Nazad)
 	{
 		detektovan_protivnik_iza = 1;
+		set_direct_out = 1;
+		PID_brzina_L = 0;
+		PID_brzina_R = 0;
 	}
 	else
 	{
@@ -549,8 +554,8 @@ void CheckInputMotorControl(void) // direktno zaustavljanje motora preko OPUSTAN
 		detektovan_protivnik_ispred = 0;
 		set_direct_out = 0;
 	}
-	
-	/*//stop na prekidac, senzori: prednji	levi							   desni							 nazad
+
+	/*	, senzori: prednji						desni   						   levi							 nazad
 	if ( ((PORTB.IN & 0b00000001) == 0) || ((PORTB.IN & 0b00000100) == 0) || ((PORTB.IN & 0b00000010) == 0) || ((PORTB.IN & 0b00001000) == 0) )
 	{
 		set_direct_out = 1;
