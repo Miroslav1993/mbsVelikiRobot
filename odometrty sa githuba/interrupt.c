@@ -25,6 +25,8 @@ ISR(TCE1_OVF_vect)	//1.5ms
 	sample_counter_niz_1++;
 	sample_counter_niz_2++;
 	sample_counter_niz_3++;
+
+	detekcija_brojac++;
 	
 	
 	
@@ -68,6 +70,12 @@ ISR(TCE1_OVF_vect)	//1.5ms
 		
 		niz_counter_niz_1++;
 		sample_counter_niz_1 = 0;
+	}
+
+	if (detekcija_brojac > 66) //99ms 
+	{	
+		detekcija_brojac = 0;
+		CheckInputMotorControl();	
 	}
 }
 //Serijska komunikacija - USART_E0 - BT_RS232 - MCU
