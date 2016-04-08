@@ -37,7 +37,8 @@ void izvuci_cilindar(void);
 void uvuci_cilindar(void);
 
 void spusti_zvono(void);
-void podigni_zvono(void);
+void podigni_zvono_full(void);
+void podigni_zvono_pola(void);
 
 void kombinacija1pink(void);
 void kombinacija2pink(void);

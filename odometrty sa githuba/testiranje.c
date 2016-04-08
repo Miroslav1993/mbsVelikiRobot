@@ -210,12 +210,21 @@ void spusti_zvono()
 	PORT_ClearPins(&PORTC, 0b00010010); //zaustavi servo
 }
 
-void podigni_zvono()
+void podigni_zvono_pola()
 {
 	PORT_SetPins(&PORTC, 0b00001000);
 	PORT_ClearPins(&PORTC, 0b00010000); //drugi smer
 	PORT_SetPins(&PORTC, 0b00000010); //pokreni servo
 	_delay_ms(1675);
+	PORT_ClearPins(&PORTC, 0b00010010); //zaustavi servo
+}
+
+void podigni_zvono_full()
+{
+	PORT_SetPins(&PORTC, 0b00001000);
+	PORT_ClearPins(&PORTC, 0b00010000); //drugi smer
+	PORT_SetPins(&PORTC, 0b00000010); //pokreni servo
+	while (!(PORTB.IN & 0b0010000) == 1);
 	PORT_ClearPins(&PORTC, 0b00010010); //zaustavi servo
 }
 
