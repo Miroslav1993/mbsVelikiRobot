@@ -99,7 +99,7 @@ int main(void)
 		
 		//posalji_poruku_bt("servo 180\n\r");
 		//posalji_karakter_bt(step1);
-		kombinacija1pink();
+		//kombinacija1pink();
 		//kombinacija2pink();
 		//kombinacija3pink();
 		//kombinacija4pink();
@@ -108,7 +108,7 @@ int main(void)
 		//kombinacija2green();
 		//kombinacija3green();
 		//kombinacija4green();
-		//kombinacija5green();
+		kombinacija5green();
 		
 		//Mladen je kaka.
 		
