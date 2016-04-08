@@ -60,8 +60,7 @@ int main(void)
 	_delay_ms(2000);					//cekanje da se stabilizuje sistem
 	
 	nuliraj_poziciju_robota();
-
-
+	
 	////jedan smer
 	//PORT_SetPins(&PORTC,	0b00010000);
 	//PORT_ClearPins(&PORTC,	0b00000100);
@@ -88,7 +87,7 @@ int main(void)
 	brojac90s = 0;
 
 
-	zatvori_hvataljku();
+	//zatvori_hvataljku();
 
 
 	//spusti_zvono();
@@ -100,7 +99,7 @@ int main(void)
 		
 		//posalji_poruku_bt("servo 180\n\r");
 		//posalji_karakter_bt(step1);
-		//kombinacija1pink();
+		kombinacija1pink();
 		//kombinacija2pink();
 		//kombinacija3pink();
 		//kombinacija4pink();
@@ -109,8 +108,8 @@ int main(void)
 		//kombinacija2green();
 		//kombinacija3green();
 		//kombinacija4green();
-		kombinacija5green();
-
+		//kombinacija5green();
+		
 		//Mladen je kaka.
 		
 

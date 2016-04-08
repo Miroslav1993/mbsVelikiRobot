@@ -292,6 +292,122 @@ void kombinacija5green(void)
 		}
 		break;
 		
+		case 16: // odlazi s peskira
+		if(flag1 == 0)
+		{
+			zeljena_pravolinijska_brzina = treca_brzina;
+			stigao_flag = 0;
+			flag1 = 1;
+			zadaj_X_Y( -600, 120, Nazad);
+		}
+		else if((stigao_flag == 1) && (brojac >= VremeCekanjaPIDa))
+		{
+			brojac = 0;
+			step1++;
+			flag1 = 0;
+		}
+		break;
+		
+		case 17: // posicionira za skoljke najdalje
+		if(flag1 == 0)
+		{
+			zeljena_pravolinijska_brzina = treca_brzina;
+			stigao_flag = 0;
+			flag1 = 1;
+			zadaj_X_Y( -1000, 725, Napred);
+		}
+		else if((stigao_flag == 1) && (brojac >= VremeCekanjaPIDa))
+		{
+			brojac = 0;
+			step1++;
+			flag1 = 0;
+		}
+		break;
+		
+		case 18: //skuplja najdalje skoljke
+		if(flag1 == 0)
+		{
+			zeljena_pravolinijska_brzina = treca_brzina;
+			stigao_flag = 0;
+			flag1 = 1;
+			zadaj_X_Y( -1900, 625, Napred);
+		}
+		else if((stigao_flag == 1) && (brojac >= VremeCekanjaPIDa))
+		{
+			otvori_hvataljku_vise();
+			brojac = 0;
+			step1++;
+			flag1 = 0;
+		}
+		break;
+		
+		case 19: //skuplja najdalje skoljke
+		if (flag1 == 0)
+		{
+			zeljena_pravolinijska_brzina = treca_brzina;
+			stigao_flag = 0;
+			flag1 = 1;
+			zadaj_X_Y_teta( -2200, 475, 180, Napred);
+		}
+		else if((stigao_flag == 1) && (brojac >= VremeCekanjaPIDa))
+		{
+			zatvori_hvataljku();
+			brojac = 0;
+			step1++;
+			flag1 = 0;
+		}
+		break;
+		
+		case 20: // posicionira za za povratak
+		if (flag1==0)
+		{
+			zeljena_pravolinijska_brzina = treca_brzina;
+			stigao_flag = 0;
+			flag1 = 1;
+			zadaj_X_Y( -1000, 725, Napred);
+		}
+		else if((stigao_flag == 1) && (brojac >= VremeCekanjaPIDa))
+		{
+			otvori_hvataljku_vise();
+			brojac = 0;
+			step1++;
+			flag1 = 0;
+		}
+		break;
+		
+		case 21: // gura na peksira
+		if(flag1 == 0)
+		{
+			zeljena_pravolinijska_brzina = prva_brzina;
+			stigao_flag = 0;
+			flag1 = 1;
+			zadaj_X_Y( -180, 0, Napred);
+		}
+		else if((stigao_flag == 1) && (brojac >= VremeCekanjaPIDa))
+		{
+			brojac = 0;
+			step1++;
+			flag1 = 0;
+		}
+		break;
+		
+		case 22: // odlazi s peskira
+		if(flag1 == 0)
+		{
+			zeljena_pravolinijska_brzina = treca_brzina;
+			stigao_flag = 0;
+			flag1 = 1;
+			zadaj_X_Y( -600, 120, Nazad);
+		}
+		else if((stigao_flag == 1) && (brojac >= VremeCekanjaPIDa))
+		{
+			zatvori_hvataljku();
+			brojac = 0;
+			step1++;
+			flag1 = 0;
+		}
+		break;
+		
 		default:
 		//do nothing
 		break;
