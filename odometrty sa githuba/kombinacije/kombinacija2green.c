@@ -16,10 +16,6 @@
 #include "../mechanism.h"
 #include "../hardware.h"
 
-volatile unsigned char step1;
-volatile char flag1;
-volatile unsigned long brojac;
-
 #define VremeCekanjaPIDa 0  //15000
 #define Napred 2
 #define Nazad 1
