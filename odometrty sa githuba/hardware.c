@@ -56,7 +56,7 @@ void Podesi_PID_Pojacanja(void)
 	Kp_teta_pravolinijski = 8; 
 		
 	//Regulacija ugaonog zakretanja
-	Kp_teta = 2; //4jos bolje?
+	Kp_teta = 5; //4jos bolje?
 	Ki_teta = 0;
 	Kd_teta = 1; //2jos bolje?
 	//Kp_teta_okretanje = 6;

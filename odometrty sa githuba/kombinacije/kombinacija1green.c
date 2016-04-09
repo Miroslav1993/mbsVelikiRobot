@@ -285,7 +285,7 @@ void kombinacija1green(void)
 			zeljena_pravolinijska_brzina = treca_brzina;
 			stigao_flag = 0;
 			flag1 = 1;
-			zadaj_X_Y( -100, 120, Napred);
+			zadaj_X_Y( -120, 120, Napred);
 		}
 		else if((stigao_flag == 1) && (brojac >= VremeCekanjaPIDa))
 		{
