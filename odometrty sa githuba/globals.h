@@ -188,15 +188,15 @@ levi_senzor,
 zadnji_senzor,
 detektovan_protivnik_ispred, 
 detektovan_protivnik_iza,
-detekcija_u_toku, //flag za detekciju
+izbegavanje_u_toku, //flag za detekciju
 detekcija_brojac;
 
 
 // brojac za 90s
 extern volatile unsigned long
-brojac90s;
+brojac90s,
+brojac;
 
-extern volatile unsigned long brojac;
 volatile char flag1;				
 
 			

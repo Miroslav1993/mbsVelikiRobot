@@ -15,15 +15,14 @@
 
 //nase
 volatile char
-
 desni_senzor,
 centralni_senzor,
 levi_senzor,
 zadnji_senzor,
 detektovan_protivnik_ispred,
 detektovan_protivnik_iza,
-detekcija_brojac,
-detekcija_u_toku;
+detekcija_brojac = 0,
+izbegavanje_u_toku = 0;
 
 #define Napred 2
 #define Nazad 1

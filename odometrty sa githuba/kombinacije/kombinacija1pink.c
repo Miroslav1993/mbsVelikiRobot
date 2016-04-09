@@ -4,6 +4,7 @@
  * Created: 02-Apr-16 2:22:15 PM
  *  Author: miros
  */ 
+
 #include <avr/io.h>
 #include "math.h"
 #include "../testiranje.h"
@@ -15,10 +16,6 @@
 #include "../globals.h"
 #include "../mechanism.h"
 #include "../hardware.h"
-
-//volatile unsigned char step1;
-//volatile char flag1;
-//volatile unsigned long brojac;
 
 #define VremeCekanjaPIDa 0  //15000
 #define Napred 2

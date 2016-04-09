@@ -5,8 +5,6 @@
  *  Author: miros
  */ 
 
-
-
 #include <avr/io.h>
 #include "math.h"
 #include "../testiranje.h"
@@ -17,10 +15,6 @@
 #include "../globals.h"
 #include "../mechanism.h"
 #include "../hardware.h"
-
-//volatile unsigned char step1;
-//volatile char flag1;
-//volatile unsigned long brojac;
 
 #define VremeCekanjaPIDa 0  //15000
 #define Napred 2
@@ -78,42 +72,10 @@ void kombinacija5pink(void)
 			flag1 = 0;
 		}
 		break;
-		
-		//case 3: // prilazi do petog paka i otvara hvataljku
-		//if(flag1 == 0)
-		//{
-			//stigao_flag = 0;
-			//flag1 = 1;
-			//zadaj_X_Y_teta( -245, -580, 0, Napred); // - 625 -520
-		//}
-		//else if((stigao_flag == 1) && (brojac >= VremeCekanjaPIDa))
-		//{
-			//brojac = 0;
-			//step1++;
-			//flag1 = 0;
-		//}
-		//break;
-//
-		//case 4: // prilazi do zida i zatvara hvataljku
-		//if(flag1 == 0)
-		//{
-			//
-			//stigao_flag = 0;
-			//flag1 = 1;
-			//zadaj_X_Y_teta( -245, -760, 0, Napred); //-520
-		//}
-		//else if((stigao_flag == 1) && (brojac >= VremeCekanjaPIDa))
-		//{
-			//brojac = 0;
-			//step1++;
-			//flag1 = 0;
-		//}
-		//break;
 
 		case 3: // prilazi do zida i pozicionira se za pecanje
 		if(flag1 == 0)
 		{
-			zatvori_hvataljku();
 			stigao_flag = 0;
 			flag1 = 1;
 			zadaj_X_Y_teta( -245, -880, 0, Napred); //-820
@@ -129,6 +91,7 @@ void kombinacija5pink(void)
 		case 4: // ide pored zida
 		if(flag1 == 0)
 		{
+			izvuci_cilindar();
 			zeljena_pravolinijska_brzina = prva_brzina;
 			stigao_flag = 0;
 			flag1 = 1;
@@ -190,7 +153,7 @@ void kombinacija5pink(void)
 		}
 		break;
 		
-		case 8: // pozicionira se za najdalje skoljke
+		case 8: // hvata skoljku koju je gurnuo kad je isao da peca i okrece se 
 		if(flag1 == 0)
 		{
 			otvori_hvataljku();
@@ -207,7 +170,7 @@ void kombinacija5pink(void)
 		}
 		break;
 		
-		case 9: // skuplja srednje i okrece se ka peskiru
+		case 9: // zatvara hvataljku da bi zadrzao skoljku i okrece se ka preostalim skoljkama koje su blizu peskira
 		if(flag1 == 0)
 		{
 			zatvori_hvataljku();
@@ -223,7 +186,7 @@ void kombinacija5pink(void)
 		}
 		break;
 		
-		case 10: // skuplja srednju skoljku blizu sredini
+		case 10: // NE ZNAM
 		if(flag1 == 0)
 		{
 			stigao_flag = 0;
@@ -285,10 +248,9 @@ void kombinacija5pink(void)
 		}
 		break;
 
-		case 14: // vraca se na peksir
+		case 14: // ide unazad i zatvara hvataljku
 		if(flag1 == 0)
 		{
-			otvori_hvataljku();
 			stigao_flag = 0;
 			flag1 = 1;
 			zadaj_X_Y( -300, -65, Nazad);
@@ -302,7 +264,7 @@ void kombinacija5pink(void)
 		}
 		break;
 
-		case 15: // 
+		case 15: // ide blizu zida da se pozicionira za skoljke na protivnickoj strani
 		if(flag1 == 0)
 		{
 			stigao_flag = 0;
@@ -317,7 +279,7 @@ void kombinacija5pink(void)
 		}
 		break;
 
-		case 16: // 
+		case 16: //ide do najdaljih skoljki
 		if(flag1 == 0)
 		{
 			stigao_flag = 0;
@@ -332,7 +294,7 @@ void kombinacija5pink(void)
 		}
 		break;
 
-		case 17: // pozicionira se za najdalje skoljke
+		case 17: // otvara hvataljku i okrece se da pokupi najdalje skoljke
 		if(flag1 == 0)
 		{
 			otvori_hvataljku_vise();
@@ -349,7 +311,7 @@ void kombinacija5pink(void)
 		}
 		break;
 		
-		case 18: // 
+		case 18: // okrece se ka peskiru
 		if(flag1 == 0)
 		{
 			stigao_flag = 0;
@@ -364,7 +326,7 @@ void kombinacija5pink(void)
 		}
 		break;
 
-		case 19: //
+		case 19: // zatvara hvataljku i ide ka peskiru
 		if(flag1 == 0)
 		{
 			zatvori_hvataljku();
@@ -396,7 +358,7 @@ void kombinacija5pink(void)
 		}
 		break;
 
-		case 21: // vraca se na peksir
+		case 21: // ide unazad i zatvara hvataljku
 		if(flag1 == 0)
 		{
 			stigao_flag = 0;
