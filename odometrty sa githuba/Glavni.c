@@ -71,10 +71,10 @@ int main(void)
 		//posalji_karakter_bt(step1);
 		//kombinacija1pink();
 		//kombinacija2pink();
-		kombinacija3pink();
+		//kombinacija3pink();
 		//kombinacija4pink();
 		//kombinacija5pink();
-		//kombinacija1green();
+		kombinacija1green();
 		//kombinacija2green();
 		//kombinacija3green();
 		//kombinacija4green();
