@@ -87,7 +87,7 @@ void kombinacija1green(void)
 			zatvori_hvataljku();
 			stigao_flag = 0;
 			flag1 = 1;
-			zadaj_X_Y_teta( -450, 850, -90, Napred);
+			zadaj_X_Y_teta( -450, 830, -90, Napred);
 		}
 		else if((stigao_flag == 1) && (brojac >= VremeCekanjaPIDa))
 		{
@@ -104,7 +104,7 @@ void kombinacija1green(void)
 			zeljena_pravolinijska_brzina = prva_brzina;
 			stigao_flag = 0;
 			flag1 = 1;
-			zadaj_X_Y(-1000, 850, Nazad);
+			zadaj_X_Y(-1000, 830, Nazad);
 		}
 		else if((stigao_flag == 1) && (brojac >= VremeCekanjaPIDa))
 		{
@@ -120,7 +120,7 @@ void kombinacija1green(void)
 			zeljena_pravolinijska_brzina = prva_brzina;
 			stigao_flag = 0;
 			flag1 = 1;
-			zadaj_X_Y(-450, 850, Napred);
+			zadaj_X_Y(-450, 830, Napred);
 		}
 		else if((stigao_flag == 1) && (brojac >= VremeCekanjaPIDa))
 		{
@@ -136,7 +136,7 @@ void kombinacija1green(void)
 			zeljena_pravolinijska_brzina = prva_brzina;
 			stigao_flag = 0;
 			flag1 = 1;
-			zadaj_X_Y(-1000, 850, Nazad);
+			zadaj_X_Y(-1000, 830, Nazad);
 		}
 		else if((stigao_flag == 1) && (brojac >= VremeCekanjaPIDa))
 		{
@@ -152,7 +152,7 @@ void kombinacija1green(void)
 			zeljena_pravolinijska_brzina = prva_brzina;
 			stigao_flag = 0;
 			flag1 = 1;
-			zadaj_X_Y(-450, 850, Napred);
+			zadaj_X_Y(-450, 830, Napred);
 		}
 		else if((stigao_flag == 1) && (brojac >= VremeCekanjaPIDa))
 		{
@@ -285,7 +285,7 @@ void kombinacija1green(void)
 			zeljena_pravolinijska_brzina = treca_brzina;
 			stigao_flag = 0;
 			flag1 = 1;
-			zadaj_X_Y( -120, 120, Napred);
+			zadaj_X_Y( -150, 120, Napred);
 		}
 		else if((stigao_flag == 1) && (brojac >= VremeCekanjaPIDa))
 		{
@@ -328,6 +328,22 @@ void kombinacija1green(void)
 		}
 		break;
 		
+		case 18: // odlazi s peskira
+		if(flag1 == 0)
+		{
+			zeljena_pravolinijska_brzina = treca_brzina;
+			stigao_flag = 0;
+			flag1 = 1;
+			zadaj_X_Y( -600, 120, Nazad);
+		}
+		else if((stigao_flag == 1) && (brojac >= VremeCekanjaPIDa))
+		{
+			zatvori_hvataljku();
+			brojac = 0;
+			step1++;
+			flag1 = 0;
+		}
+		break;
 		default:
 		//do nothing
 		break;

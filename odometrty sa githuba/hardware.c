@@ -58,7 +58,7 @@ void Podesi_PID_Pojacanja(void)
 	//Regulacija ugaonog zakretanja
 	Kp_teta = 5; //4jos bolje?
 	Ki_teta = 0;
-	Kd_teta = 1; //2jos bolje?
+	Kd_teta = 0.5; //2jos bolje?
 	//Kp_teta_okretanje = 6;
 		
 	//Regulacija brzine
